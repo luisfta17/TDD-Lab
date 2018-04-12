@@ -36,7 +36,18 @@ def loan_money(lendee, lender, amount)
  lender[:monies] -= amount
 end
 
-def add_everyone_fav_food(people)
-  p people[:favourites][:things_to_eat][0]
+def all_foods(people)
+  foods = []
+  for person in people
+    foods.concat(person[:favourites][:things_to_eat])
+  end
+  return foods
+end
 
+def no_friends(people)
+  result = []
+  for person in people
+    result.push( person ) if person[:friends].empty?
+  end
+  return result
 end
