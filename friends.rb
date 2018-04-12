@@ -17,10 +17,26 @@ end
 
 def add_friend(person, friend_name)
   person[:friends].push(friend_name)
-  return person[:friends].length
 end
 
 def remove_friend(person, friend_name)
   person[:friends].delete(friend_name)
-  return person[:friends].length
+end
+
+def total_money(people)
+  total = 0
+  for person in people
+    total += person[:monies]
+  end
+  return total
+end
+
+def loan_money(lendee, lender, amount)
+ lendee[:monies] += amount
+ lender[:monies] -= amount
+end
+
+def add_everyone_fav_food(people)
+  p people[:favourites][:things_to_eat][0]
+
 end
